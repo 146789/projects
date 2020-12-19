@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <form action="{% url 'up' data.name %}" method="POST">
+                {% csrf_token %}
+                <div class="row p-5">
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" , name="cname" , value="{{data.collageaname}}">
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" , name="name" , value="{{data.name}}">
+                    </div>
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" , name="roll" , value="{{data.roll}}">
+                    </div>
+
+                </div>
+                <div class="row p-5">
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" , name="branch" , value="{{data.branch}}">
+                    </div>
+                    <div class="col-md-6">
+                        <input class="form-control" type="text" , name="year" , value="{{data.year}}">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="submit" class="btn btn-info text-center" value="update">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+            </form>
+        </table>
+
+    </div>
+</body>
+
+</html>

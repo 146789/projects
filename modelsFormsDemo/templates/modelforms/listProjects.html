@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projectslIst</title>
+</head>
+
+<body>
+    {% if projects %}
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Assigned TO</th>
+            <th>Prirority</th>
+        </thead>
+        {% for p in projects %}
+        <tr>
+            <td>{{p.name}}</td>
+            <td>{{p.startDate}}</td>
+            <td>{{p.endDate}}</td>
+            <td>{{p.assignedTo}}</td>
+            <td>{{p.priroity}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No projects found in database</p>
+    {% endif %}
+</body>
+
+</html>

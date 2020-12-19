@@ -1,0 +1,28 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">
+        <img src="{% static 'images/logo.png' %}" alt="logo" style="width:60px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+
+        <!-- Links -->
+        <ul class="navbar-nav" style="justify-content: space-between;">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">about</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Registration</a>
+            </li>
+        </ul>
+    </div>
+</nav>

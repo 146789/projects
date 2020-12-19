@@ -1,0 +1,24 @@
+{% extends 'blog_template/base.html' %}
+{% load static %}
+{% block title %} Index {% endblock %}
+{% block content %}
+<div class="Container p-5">
+    <h4>Projects</h4>
+    <hr />
+    <div class="row">
+        {% for p in blog %}
+        <div class="col-md-4">
+            <div class="card mb-4 p-3">
+                <img class="card-img-top" src="{% static p.Image %}" alt="project image">
+                <div class="card-top">
+                    <h5 class="card-title">{{p.title}}</h5>
+                    <p class="card-text">{{p.description}}</p>
+                    <a href="{% url 'blog_details' p.pk %}" class="btn btn-primary">read more</a>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>registered students data</title>
+</head>
+
+<body>
+    <div class="container p-5">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>serial no</th>
+                    <th>name</th>
+                    <th>collage name</th>
+                    <th>roll number</th>
+                    <th>branch</th>
+                    <th>year</th>
+                    <th>Delete</th>
+                    <th>Update/Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in data %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{r.name}}</td>
+                    <td>{{r.collageaname}}</td>
+                    <td>{{r.roll}}</td>
+                    <td>{{r.branch}}</td>
+                    <td>{{r.year}}</td>
+                    <td><a href="{% url 'del' r.id %}">Delete</a></td>
+                    <td><a href="{% url 'up' r.name %}">Update</a></td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <a href="{% url 'rg' %}"><input type="button" class="btn btn-primary" value="register"></a>
+    </div>
+</body>
+
+</html>

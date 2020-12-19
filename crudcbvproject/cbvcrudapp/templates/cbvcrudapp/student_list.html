@@ -1,0 +1,25 @@
+{% extends 'cbvcrudapp/base.html' %}
+{% block content %}
+{% load custFilter %}
+<h3>students</h3>
+<table border="1">
+    <thead>
+        <th>ID</th>
+        <th>First_name</th>
+        <th>Last_name</th>
+        <th>score</th>
+    </thead>
+    <tbody>
+        {% for s in student_list %}
+        <tr>
+            <td><a href="/{{s.id}}">{{s.id}}</a></td>
+            <td>{{s.firstName | myAppend:" kohli"}}</td>
+            <td>{{s.lastName | mylower }}</td>
+            <td>{{s.Tscore | add:"5"}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+<a href="/create"><input type="button" value="add student"></a>
+{% endblock %}

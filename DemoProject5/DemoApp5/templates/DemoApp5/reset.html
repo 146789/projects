@@ -1,0 +1,14 @@
+{% extends 'DemoApp5/base.html '%}
+{% block title %}login{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card col-md-6 mx-auto mt-5">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-warning" value="submit">
+
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>studentinfo</title>
+</head>
+
+<body>
+    <h3>students</h3>
+    <table border="2">
+        <thead>
+            <th>ID</th>
+            <th>First_name</th>
+            <th>Last_name</th>
+            <th>score</th>
+        </thead>
+        <tbody>
+            {% for s in student %}
+            <tr>
+                <td>{{s.id}}</td>
+                <td>{{s.FirstName}}</td>
+                <td>{{s.LastName}}</td>
+                <td>{{s.testscore}}</td>
+                <td><a href="/delete/{{s.id}}">delete</a></td>
+                <td><a href="/update/{{s.id}}">update</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    <a href="/create"><input type="button" value="add student"></a>
+    <a href="/accounts/logout"><input type="button" value="logout"></a>
+</body>
+
+</html>

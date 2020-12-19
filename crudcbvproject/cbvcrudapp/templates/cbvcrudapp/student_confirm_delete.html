@@ -1,0 +1,10 @@
+{% extends 'cbvcrudapp/base.html' %}
+{% block content %}
+<h3>Delete student {{student.firstName}} ?</h3>
+<form method="POST">
+    <input type="submit" value="Confirm">
+    <a href="/{{student.id}}">cancel</a>
+    {% csrf_token %}
+
+</form>
+{% endblock %}

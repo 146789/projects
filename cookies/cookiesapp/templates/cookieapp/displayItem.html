@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>items in the cart</h1>
+    {% if request.COOKIES %}
+    <table>
+        <thead>
+            <th>Product Name:</th>
+            <th>Quantity</th>
+        </thead>
+        <tbody>
+            {% for key, val in request.COOKIES.items %}
+            <tr>
+                <td>{{key}}</td>
+                <td>{{val}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>cark is empty</p>
+    {% endif %}
+</body>
+
+</html>

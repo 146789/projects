@@ -1,0 +1,21 @@
+{% extends 'cbvcrudapp/base.html' %}
+{% block content %}
+<h1>Student Details</h1>
+<ol>
+    <h3>
+        <li>Name : {{student.firstName}}</li>
+    </h3>
+    <h3>
+        <li>Name: {{student.lastName}}</li>
+    </h3>
+    <h3>
+        <li>Score : {{student.Tscore}}</li>
+    </h3>
+    <h3>
+        <li><a href="/delete/{{student.id}}">delete</a></li>
+    </h3>
+    <h3>
+        <li><a href="/update/{{student.id}}">update</a></li>
+    </h3>
+</ol>
+{% endblock %}
